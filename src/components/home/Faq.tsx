@@ -35,11 +35,11 @@ export function Faq({ content }: FaqProps) {
               <article className="soft-card overflow-hidden">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-3.5 text-left sm:gap-4 sm:px-5 sm:py-5"
                   aria-expanded={isOpen}
                   onClick={() => setOpenIndex((current) => (current === index ? null : index))}
                 >
-                  <span className="text-base text-white">{item.question}</span>
+                  <span className="text-[0.95rem] leading-[1.65rem] text-white sm:text-base sm:leading-7">{item.question}</span>
                   <span className="icon-button shrink-0">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
@@ -53,7 +53,7 @@ export function Faq({ content }: FaqProps) {
                       animate="open"
                       exit="closed"
                     >
-                      <div className="border-t border-[var(--line-soft)] px-5 py-5 text-sm leading-7 text-[var(--muted)]">
+                      <div className="border-t border-[var(--line-soft)] px-4 py-4 text-[0.92rem] leading-6 text-[var(--muted)] sm:px-5 sm:py-5 sm:text-sm sm:leading-7">
                         {item.answer}
                       </div>
                     </motion.div>

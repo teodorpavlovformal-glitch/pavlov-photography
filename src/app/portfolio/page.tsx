@@ -34,19 +34,19 @@ const archiveStats = [
 export default function PortfolioArchivePage() {
   return (
     <SiteFrame>
-      <section className="section-frame px-5 pb-18 pt-6 sm:px-8 lg:px-10 xl:px-16">
+      <section className="section-frame px-4 pb-14 pt-4 sm:px-8 sm:pb-18 sm:pt-6 lg:px-10 xl:px-16">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.8fr)] lg:items-end">
           <Reveal>
             <div className="max-w-3xl">
               <p className="eyebrow">Архив</p>
-              <h1 className="mt-5 text-balance text-4xl leading-[0.96] tracking-[-0.05em] text-white sm:text-5xl lg:text-7xl">
+              <h1 className="mt-4 text-balance text-[2.55rem] leading-[0.94] tracking-[-0.05em] text-white sm:mt-5 sm:text-5xl lg:text-7xl">
                 Портфолио архив
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+              <p className="mt-4 max-w-2xl text-[0.98rem] leading-7 text-[var(--muted)] sm:mt-6 sm:text-lg">
                 Разгледай по-спокойно избрани проекти отвъд началната страница. Тук всеки кадър има
                 собствен контекст, настроение и ясно обяснение какво трябва да свърши визуално.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
                 <Link href="/#contact" className="button-primary">
                   Запази сесия
                 </Link>
@@ -57,11 +57,11 @@ export default function PortfolioArchivePage() {
             </div>
           </Reveal>
 
-          <Reveal className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <Reveal className="grid gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-1">
             {archiveStats.map((stat) => (
-              <div key={stat.label} className="soft-card p-5">
-                <p className="text-3xl tracking-[-0.05em] text-white">{stat.value}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.26em] text-[var(--muted)]">
+              <div key={stat.label} className="soft-card p-4 sm:p-5">
+                <p className="text-[2rem] tracking-[-0.05em] text-white sm:text-3xl">{stat.value}</p>
+                <p className="mt-2 text-[0.62rem] uppercase tracking-[0.16em] text-[var(--muted)] sm:text-xs sm:tracking-[0.26em]">
                   {stat.label}
                 </p>
               </div>
@@ -70,11 +70,11 @@ export default function PortfolioArchivePage() {
         </div>
       </section>
 
-      <section className="section-frame px-5 py-18 sm:px-8 lg:px-10 xl:px-16">
+      <section className="section-frame px-4 py-14 sm:px-8 sm:py-18 lg:px-10 xl:px-16">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-              <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-4 sm:mb-8">
+              <p className="text-[0.62rem] uppercase tracking-[0.16em] text-[var(--muted)] sm:text-xs sm:tracking-[0.28em]">
                 {portfolioProjects.length} проекта в архива
               </p>
               <div className="flex flex-wrap gap-2">
@@ -90,12 +90,12 @@ export default function PortfolioArchivePage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:gap-4 xl:grid-cols-3">
             {portfolioProjects.map((project) => (
               <Reveal key={project.slug}>
                 <Link
                   href={getPortfolioItemPath(project)}
-                  className={`group block overflow-hidden rounded-[1.8rem] border border-[var(--line-soft)] bg-[var(--surface)] ${ratioClassMap[project.ratio]}`}
+                  className={`group block overflow-hidden rounded-[1.1rem] border border-[var(--line-soft)] bg-[var(--surface)] sm:rounded-[1.8rem] ${ratioClassMap[project.ratio]}`}
                 >
                   <div className="relative h-full">
                     <Image
@@ -106,13 +106,13 @@ export default function PortfolioArchivePage() {
                       sizes="(max-width: 480px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/30 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5">
+                    <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 sm:gap-4 sm:p-5">
                       <div className="max-w-[85%]">
                         <p className="mb-2 text-[0.68rem] uppercase tracking-[0.28em] text-[var(--accent)]">
                           {project.eyebrow}
                         </p>
-                        <h2 className="text-2xl tracking-[-0.03em] text-white">{project.title}</h2>
-                        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{project.subtitle}</p>
+                        <h2 className="text-[1.15rem] tracking-[-0.03em] text-white sm:text-2xl">{project.title}</h2>
+                        <p className="mt-1.5 text-[0.86rem] leading-[1.35rem] text-[var(--muted)] sm:mt-2 sm:text-sm sm:leading-6">{project.subtitle}</p>
                       </div>
                       <span className="icon-button shrink-0">
                         <ArrowUpRight className="h-4 w-4" />

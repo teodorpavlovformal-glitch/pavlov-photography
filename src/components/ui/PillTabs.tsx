@@ -25,7 +25,7 @@ export function PillTabs<T extends string>({
     <div
       role="tablist"
       aria-orientation="horizontal"
-      className="inline-flex flex-wrap gap-2 rounded-full border border-[var(--line-soft)] bg-[rgba(255,255,255,0.02)] p-1"
+      className="inline-flex flex-wrap gap-1 rounded-[1rem] border border-[var(--line-soft)] bg-[rgba(255,255,255,0.02)] p-1 sm:gap-2 sm:rounded-full"
     >
       {options.map((option) => {
         const isActive = option.value === value;
@@ -37,7 +37,7 @@ export function PillTabs<T extends string>({
             role="tab"
             aria-selected={isActive}
             className={[
-              "relative rounded-full px-4 py-2 text-sm tracking-[0.22em] uppercase transition-colors duration-200",
+              "relative rounded-full px-2.5 py-2 text-[0.66rem] tracking-[0.14em] uppercase transition-colors duration-200 sm:px-4 sm:text-sm sm:tracking-[0.22em]",
               isActive
                 ? "text-black"
                 : "text-[var(--muted)] hover:text-[var(--foreground)]",

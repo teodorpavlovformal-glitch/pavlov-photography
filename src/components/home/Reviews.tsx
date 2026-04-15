@@ -36,15 +36,15 @@ export function Reviews({ content }: ReviewsProps) {
   return (
     <SectionShell id="reviews" eyebrow={content.eyebrow} title={renderTitle(content.title)}>
       <Reveal>
-        <article className="soft-card p-7 sm:p-10">
+        <article className="soft-card p-4 sm:p-10">
           <p className="text-sm uppercase tracking-[0.24em] text-[var(--accent)]">★★★★★</p>
-          <blockquote className="mt-6 max-w-4xl text-2xl leading-tight text-white sm:text-4xl">
+          <blockquote className="mt-4 max-w-4xl text-[1.32rem] leading-[1.15] text-white sm:mt-6 sm:text-4xl">
             “{activeReview.quote}”
           </blockquote>
-          <div className="mt-8 flex flex-col gap-4 border-t border-[var(--line-soft)] pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-4 border-t border-[var(--line-soft)] pt-4 sm:mt-8 sm:pt-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-sm uppercase tracking-[0.24em] text-white">{activeReview.author}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
+              <p className="text-[0.72rem] uppercase tracking-[0.18em] text-white sm:text-sm sm:tracking-[0.24em]">{activeReview.author}</p>
+              <p className="mt-2 text-[0.62rem] uppercase tracking-[0.16em] text-[var(--muted)] sm:text-xs sm:tracking-[0.24em]">
                 {activeReview.role}
               </p>
             </div>

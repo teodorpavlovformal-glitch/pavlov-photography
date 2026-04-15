@@ -33,7 +33,7 @@ export function BeforeAfterSlider({
 
   return (
     <div className="soft-card overflow-hidden">
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[16/10]">
         <Image
           src={beforeImage.src}
           alt={beforeImage.alt}
@@ -84,15 +84,15 @@ export function BeforeAfterSlider({
           }}
         />
         <div
-          className="pointer-events-none absolute top-1/2 z-20 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--line-strong)] bg-[rgba(13,13,13,0.92)] text-[var(--accent-bright)]"
+          className="pointer-events-none absolute top-1/2 z-20 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--line-strong)] bg-[rgba(13,13,13,0.92)] text-[var(--accent-bright)] sm:h-12 sm:w-12"
           style={{ left: `${value}%` }}
         >
-          <span className="text-xs tracking-[0.18em] uppercase">|||</span>
+          <span className="text-[0.58rem] tracking-[0.12em] uppercase sm:text-xs sm:tracking-[0.18em]">|||</span>
         </div>
-        <div className="absolute left-4 top-4 rounded-full border border-[var(--line-soft)] bg-black/45 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white">
+        <div className="absolute left-3 top-3 rounded-full border border-[var(--line-soft)] bg-black/45 px-2.5 py-1 text-[0.58rem] uppercase tracking-[0.12em] text-white sm:left-4 sm:top-4 sm:px-3 sm:text-xs sm:tracking-[0.2em]">
           {beforeLabel}
         </div>
-        <div className="absolute right-4 top-4 rounded-full border border-[var(--line-soft)] bg-[var(--accent-bright)] px-3 py-1 text-xs uppercase tracking-[0.2em] text-black">
+        <div className="absolute right-3 top-3 rounded-full border border-[var(--line-soft)] bg-[var(--accent-bright)] px-2.5 py-1 text-[0.58rem] uppercase tracking-[0.12em] text-black sm:right-4 sm:top-4 sm:px-3 sm:text-xs sm:tracking-[0.2em]">
           {afterLabel}
         </div>
       </div>

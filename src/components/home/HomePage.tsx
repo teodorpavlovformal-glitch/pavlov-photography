@@ -19,7 +19,7 @@ export function HomePage() {
     <>
       <PointerGlow />
       <Navbar links={homeNavLinks} />
-      <main className="relative overflow-hidden">
+      <main className="relative overflow-hidden pb-24 md:pb-0">
         <Hero content={homeContent.hero} />
         <About content={homeContent.about} />
         <Services content={homeContent.services} />

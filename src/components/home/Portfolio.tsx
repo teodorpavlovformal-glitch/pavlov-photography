@@ -43,24 +43,24 @@ export function Portfolio({ content }: PortfolioProps) {
       description={content.description}
     >
       <Reveal>
-        <div className="soft-card flex flex-wrap items-center gap-3 p-3 sm:gap-4 sm:p-4">
+        <div className="soft-card flex flex-col items-stretch gap-2.5 p-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:p-4">
           <PillTabs
             layoutId="portfolio-tabs"
             options={content.filters}
             value={activeCategory}
             onChange={(value) => setActiveCategory(value)}
           />
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
+          <p className="pl-1 text-[0.64rem] uppercase tracking-[0.16em] text-[var(--muted)] sm:pl-0 sm:text-xs sm:tracking-[0.28em]">
             {filteredItems.length} проекта
           </p>
         </div>
       </Reveal>
 
-      <div className="mt-8 columns-1 gap-4 min-[480px]:columns-2 lg:columns-3">
+      <div className="mt-6 columns-1 gap-3 min-[480px]:columns-2 sm:mt-8 sm:gap-4 lg:columns-3">
         {filteredItems.map((item) => (
           <article
             key={item.id}
-            className={`group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-[1.6rem] border border-[var(--line-soft)] bg-[var(--surface)] ${ratioClassMap[item.ratio]}`}
+            className={`group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-[1rem] border border-[var(--line-soft)] bg-[var(--surface)] sm:mb-4 sm:rounded-[1.6rem] ${ratioClassMap[item.ratio]}`}
           >
             <Image
               src={item.image}
@@ -70,19 +70,19 @@ export function Portfolio({ content }: PortfolioProps) {
               sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-95" />
-            <div className="absolute inset-x-0 bottom-0 p-5">
+            <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-5">
               <div>
-                <h3 className="text-xl text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.subtitle}</p>
+                <h3 className="text-[1rem] text-white sm:text-xl">{item.title}</h3>
+                <p className="mt-1.5 text-[0.86rem] leading-[1.35rem] text-[var(--muted)] sm:mt-2 sm:text-sm sm:leading-6">{item.subtitle}</p>
               </div>
             </div>
           </article>
         ))}
       </div>
 
-      <Reveal className="mt-14">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(320px,1.2fr)] lg:items-end">
-          <div className="flex justify-center lg:col-span-2">
+      <Reveal className="mt-10 sm:mt-14">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(320px,1.2fr)] lg:items-end">
+          <div className="flex justify-center text-center lg:col-span-2">
             <p className="eyebrow">Обработка</p>
           </div>
           <div className="lg:col-span-2">

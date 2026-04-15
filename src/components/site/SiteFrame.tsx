@@ -15,7 +15,7 @@ export function SiteFrame({ children }: SiteFrameProps) {
     <>
       <PointerGlow />
       <Navbar links={brochureNavLinks} rootHrefBase="/" />
-      <main className="relative overflow-hidden pt-28 sm:pt-32">{children}</main>
+      <main className="relative overflow-hidden pb-24 pt-20 sm:pt-32 md:pb-0">{children}</main>
       <FooterCta content={homeContent.footerCta} />
       <FloatingCallButton phone={homeContent.contact.phone} />
     </>

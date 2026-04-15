@@ -41,12 +41,14 @@ export function Navbar({ links, rootHrefBase = "" }: NavbarProps) {
   const chromeClass = isScrolled || isOpen ? "nav-solid" : "nav-clear";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-10">
-      <div className={`mx-auto max-w-7xl rounded-full border px-5 py-3 transition-all duration-300 ${chromeClass}`}>
-        <div className="flex items-center justify-between gap-6">
-          <a href={resolveHref("#hero")} className="group flex items-center gap-3">
-            <ApertureLogo className="h-10 w-10" />
-            <p className="text-[0.8rem] font-medium uppercase tracking-[0.36em] text-[var(--muted)] sm:text-[0.9rem]">
+    <header className="fixed inset-x-0 top-0 z-50 px-2.5 pt-[calc(0.55rem+env(safe-area-inset-top))] sm:px-6 sm:pt-4 lg:px-10">
+      <div
+        className={`mx-auto max-w-7xl rounded-[1.15rem] border px-3 py-2 sm:rounded-full sm:px-5 sm:py-3 transition-all duration-300 ${chromeClass}`}
+      >
+        <div className="flex items-center justify-between gap-2.5 sm:gap-6">
+          <a href={resolveHref("#hero")} className="group flex min-w-0 items-center gap-2 sm:gap-3">
+            <ApertureLogo className="h-8 w-8 sm:h-10 sm:w-10" />
+            <p className="max-w-[11.75rem] truncate text-[0.62rem] font-medium uppercase tracking-[0.2em] text-[var(--muted)] sm:max-w-none sm:text-[0.9rem] sm:tracking-[0.36em]">
               Pavlov Photography
             </p>
           </a>
@@ -82,13 +84,13 @@ export function Navbar({ links, rootHrefBase = "" }: NavbarProps) {
         </div>
 
         {isOpen ? (
-          <div className="mt-4 border-t border-[var(--line-soft)] pt-4 lg:hidden">
-            <nav className="flex flex-col gap-3">
+          <div className="mt-3 border-t border-[var(--line-soft)] pt-3 lg:hidden">
+            <nav className="flex flex-col gap-2.5">
               {mobileLinks.map((link) => (
                 <a
                   key={`${rootHrefBase}${link.href}-mobile`}
                   href={resolveHref(link.href)}
-                  className="rounded-2xl border border-[var(--line-soft)] px-4 py-3 text-sm uppercase tracking-[0.2em] text-white"
+                  className="rounded-[1rem] border border-[var(--line-soft)] px-3.5 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
